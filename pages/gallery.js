@@ -3,15 +3,15 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
 
-export default function Home(props) {
+export default function Gallery() {
     return (
         <Container maxWidth="sm">
             <Box my={4}>
                 <Typography variant="h4" component="h1" gutterBottom>
-                    Home
+                    Gallery
                 </Typography>
-                <Link href="/gallery">
-                    <a>Gallery</a>
+                <Link href="/">
+                    <a>Home</a>
                 </Link>
             </Box>
             <Typography paragraph>

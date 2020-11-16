@@ -1,5 +1,5 @@
 {
-  "name": "learn-starter",
+  "name": "dresses_app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "next": "^10.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "2.1.2",
+    "prettier-eslint": "^11.0.0"
   }
 }
