@@ -1,4 +1,4 @@
-import ApplicationBar from '@/components/applicationBar';
+import ApplicationBar from '@/components/ApplicationBar/applicationBar';
 
 export default function Layout({ children }) {
     return (

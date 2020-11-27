@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
     AppBar,
     CssBaseline,
@@ -9,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import ApplicationDrawer from '@/components/ApplicationBar/applicationDrawer';
 
 const useStyles = makeStyles((theme) => ({
     menuButton: {
@@ -32,6 +34,7 @@ function HideOnScroll(props) {
 }
 
 export default function ApplicationBar({ props }) {
+    const [showDrawer, setShowDrawer] = useState(false);
     const classes = useStyles();
     return (
         <React.Fragment>
@@ -43,6 +46,7 @@ export default function ApplicationBar({ props }) {
                             edge="start"
                             className={classes.menuButton}
                             aria-label="menu"
+                            onClick={() => setShowDrawer(!showDrawer)}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -53,6 +57,10 @@ export default function ApplicationBar({ props }) {
                 </AppBar>
             </HideOnScroll>
             <Toolbar />
+            <ApplicationDrawer
+                open={showDrawer}
+                onClose={() => setShowDrawer(!showDrawer)}
+            />
         </React.Fragment>
     );
 }
