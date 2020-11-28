@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import ApplicationDrawer from '@/components/ApplicationBar/applicationDrawer';
+import ApplicationDrawer from '@/components/Drawer/appDrawer';
 
 const useStyles = makeStyles((theme) => ({
     menuButton: {
@@ -33,7 +33,7 @@ function HideOnScroll(props) {
     );
 }
 
-export default function ApplicationBar({ props }) {
+export default function ApplicationBar({ props, userInfo }) {
     const [showDrawer, setShowDrawer] = useState(false);
     const classes = useStyles();
     return (
@@ -58,6 +58,7 @@ export default function ApplicationBar({ props }) {
             </HideOnScroll>
             <Toolbar />
             <ApplicationDrawer
+                userInfo
                 open={showDrawer}
                 onClose={() => setShowDrawer(!showDrawer)}
             />

@@ -6,9 +6,11 @@ import {
     ListItem,
     ListItemIcon,
     ListItemText,
-    Avatar,
 } from '@material-ui/core';
 import MailIcon from '@material-ui/icons/Mail';
+import DrawerTitle from '@/components/Drawer/drawerTitle';
+import UserContext from '@/context/UserContext';
+import { useContext } from 'react';
 
 const drawerWidth = '17em';
 
@@ -34,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ApplicationDrawer({ open, onClose }) {
+export default function AppDrawer({ open, onClose }) {
+    const { user, setUser } = useContext(UserContext);
     const classes = useStyles();
     return (
         <Drawer
@@ -47,13 +50,7 @@ export default function ApplicationDrawer({ open, onClose }) {
             onClose={onClose}
         >
             <div onClick={onClose} onKeyDown={onClose}>
-                <div className={classes.drawerTitle}>
-                    <Avatar
-                        alt=""
-                        className={classes.drawerAvatar}
-                        src="/1.jpg"
-                    />
-                </div>
+                <DrawerTitle />
                 <List>
                     <ListItem button key={'hola'}>
                         <ListItemIcon>
@@ -64,14 +61,21 @@ export default function ApplicationDrawer({ open, onClose }) {
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <MailIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
+                    <ListItem
+                        button
+                        key={'adios'}
+                        onClick={() =>
+                            setUser({
+                                name: 'juan',
+                                email: 'pvidalsalvador@gmail.com',
+                            })
+                        }
+                    >
+                        <ListItemIcon>
+                            <MailIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={'adios'} />
+                    </ListItem>
                 </List>
             </div>
         </Drawer>
