@@ -6,7 +6,7 @@ import UserContext from '@/context/UserContext';
 const useStyles = makeStyles((theme) => ({
     drawerTitle: {
         height: '8em',
-        backgroundImage: 'linear-gradient(120deg, #a1c4fd 0%, #7FB3D5 100%)',
+        backgroundImage: 'linear-gradient(120deg, #57a2c3 0%, #57a2c5 100%)',
         position: 'relative',
     },
     drawerAvatar: {

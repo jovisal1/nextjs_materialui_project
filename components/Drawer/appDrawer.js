@@ -9,8 +9,6 @@ import {
 } from '@material-ui/core';
 import MailIcon from '@material-ui/icons/Mail';
 import DrawerTitle from '@/components/Drawer/drawerTitle';
-import UserContext from '@/context/UserContext';
-import { useContext } from 'react';
 
 const drawerWidth = '17em';
 
@@ -37,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AppDrawer({ open, onClose }) {
-    const { user, setUser } = useContext(UserContext);
     const classes = useStyles();
     return (
         <Drawer
@@ -64,12 +61,7 @@ export default function AppDrawer({ open, onClose }) {
                     <ListItem
                         button
                         key={'adios'}
-                        onClick={() =>
-                            setUser({
-                                name: 'juan',
-                                email: 'pvidalsalvador@gmail.com',
-                            })
-                        }
+                        onClick={() => alert('Hola')}
                     >
                         <ListItemIcon>
                             <MailIcon />
