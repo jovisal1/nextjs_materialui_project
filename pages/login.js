@@ -1,9 +1,7 @@
 import { useState, useContext } from 'react';
 import {
     Dialog,
-    DialogTitle,
     DialogContent,
-    DialogContentText,
     DialogActions,
     TextField,
     Button,
@@ -30,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             margin: theme.spacing(1),
             width: '95%',
-            fontSize: '12px',
         },
     },
     loginActions: {
@@ -94,6 +91,9 @@ export default function Login() {
                             label="Login"
                             fullWidth
                             onChange={(ev) => setUserName(ev.target.value)}
+                            inputLabelProps={{
+                                style: { fontSize: 5 },
+                            }}
                         />
                         <TextField
                             id="standard-basic"
